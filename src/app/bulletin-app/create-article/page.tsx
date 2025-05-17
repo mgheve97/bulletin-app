@@ -24,8 +24,6 @@ const CreateArticle = () => {
     }));
   };
 
-  console.log(articleContent);
-
   const GotoBoard = () => {
     router.push("/bulletin-app/board-article/");
   };

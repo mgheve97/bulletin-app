@@ -12,9 +12,10 @@ interface Article {
 }
 
 function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
-  const { articleContent, updatearticle } = useArticle();
+  const { articleContent, updatearticle, deletearticle } = useArticle();
   const router = useRouter();
   const [article, setArticle] = useState<Article | null>(null);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -22,7 +23,10 @@ function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
       const foundArticle = articleContent.find(
         (article) => article.id === resolvedParams.id
       );
-      setArticle(foundArticle || null);
+      if (foundArticle) {
+        setArticle(foundArticle);
+        setTitle(foundArticle.title);
+      }
     };
 
     fetchArticle();
@@ -33,6 +37,9 @@ function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
   };
 
   const handleUpdate = () => {
+    if (title.length === 0 || !title.trim()) {
+      deletearticle(article?.id || "");
+    }
     if (article) {
       updatearticle(article.id, {
         title: article.title,
@@ -138,7 +145,7 @@ function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
                     <path
                       d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9036 8.09644 27.5 15 27.5Z"
                       stroke="#334155"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
                   </svg>
                 </div>

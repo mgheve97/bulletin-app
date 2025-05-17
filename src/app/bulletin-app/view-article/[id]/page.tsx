@@ -79,7 +79,7 @@ function ViewArticle({ params }: { params: Promise<{ id: string }> }) {
 
           <div className="flex justify-center items-center">
             <button
-              className="font-bold text-3xl bg-sky-100 px-4 py-2 border-2 border-black rounded-md shadow-lg"
+              className="font-bold sm:text-3xl text-[12px] bg-sky-100 sm:px-4 sm:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg"
               onClick={() =>
                 router.push(`/bulletin-app/update-article/${article.id}/`)
               }
