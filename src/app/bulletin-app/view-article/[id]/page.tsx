@@ -10,7 +10,7 @@ interface Article {
   datepost: string;
 }
 
-const ViewArticle = ({ params }: { params: { id: string } }) => {
+function ViewArticle({ params }: { params: Promise<{ id: string }> }) {
   const { articleContent, deletearticle } = useArticle();
   const router = useRouter();
   const [article, setArticle] = useState<Article | null>(null);
@@ -97,6 +97,6 @@ const ViewArticle = ({ params }: { params: { id: string } }) => {
       </div>
     </div>
   );
-};
+}
 
 export default ViewArticle;

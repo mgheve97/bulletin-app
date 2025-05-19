@@ -10,7 +10,7 @@ interface Article {
   datepost: string;
 }
 
-const UpdateArticle = ({ params }: { params: { id: string } }) => {
+function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
   const { articleContent, updatearticle } = useArticle();
   const router = useRouter();
   const [article, setArticle] = useState<Article | null>(null);
@@ -102,6 +102,6 @@ const UpdateArticle = ({ params }: { params: { id: string } }) => {
       </div>
     </div>
   );
-};
+}
 
 export default UpdateArticle;
