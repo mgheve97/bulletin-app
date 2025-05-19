@@ -47,19 +47,19 @@ const ViewArticle = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div>
-      <div className="container mx-auto mt-12">
+    <div className="h-screen w-screen bg-green-100">
+      <div className="flex flex-col lg:px-[174px] lg:pt-[133px] px-2 pt-5">
         <nav className="flex justify-between">
-          <p className="Bold text-6xl">Article</p>
-          <div>
+          <p className="font-bold text-6xl">Article</p>
+          <div className="flex lg:flex-row flex-col space-y-2 space-x-0 lg:space-y-0 lg:space-x-4">
             <button
-              className="Bold text-3xl bg-white px-4 py-2 border-2 border-black rounded-md shadow-lg "
+              className="font-bold lg:text-3xl text-[12px] bg-white lg:px-4 lg:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg "
               onClick={() => router.push("/bulletin-app/board-article/")}
             >
               View Board
             </button>
             <button
-              className="Bold text-3xl bg-sky-100 px-4 py-2 border-2 border-black rounded-md shadow-lg ml-4"
+              className="font-bold lg:text-3xl text-[12px] bg-white lg:px-4 lg:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg ml-4"
               onClick={() => router.push("/bulletin-app/")}
             >
               Back to Home
@@ -69,7 +69,7 @@ const ViewArticle = ({ params }: { params: { id: string } }) => {
 
         {/* view content */}
         <div className="mt-16">
-          <div className="p-10 rounded-md border-2 mb-10">
+          <div className="flex flex-col justify-center items-center p-10 rounded-md border-t-8 border-b-2 border-x-1 border-t-green-700 border-b-slate-800 border-x-slate-500 mb-10 bg-green-50 mx-20 lg:mx-0">
             <p className="font-bold text-3xl mt-1">{article.title}</p>
             <p className="font-bold text-gray-500 text-md mt-2">
               {article.datepost}
@@ -77,20 +77,22 @@ const ViewArticle = ({ params }: { params: { id: string } }) => {
             <p className="font-medium text-lg mt-4">{article.content}</p>
           </div>
 
-          <button
-            className="Bold text-3xl bg-sky-100 px-4 py-2 border-2 border-black rounded-md shadow-lg"
-            onClick={() =>
-              router.push(`/bulletin-app/update-article/${article.id}/`)
-            }
-          >
-            Update Article
-          </button>
-          <button
-            className="Bold text-3xl bg-red-100 px-4 py-2 border-2 border-black rounded-md shadow-lg ml-10"
-            onClick={() => handleDelete(article.id)}
-          >
-            Delete Article
-          </button>
+          <div className="flex justify-center items-center">
+            <button
+              className="font-bold text-3xl bg-sky-100 px-4 py-2 border-2 border-black rounded-md shadow-lg"
+              onClick={() =>
+                router.push(`/bulletin-app/update-article/${article.id}/`)
+              }
+            >
+              Update Article
+            </button>
+            <button
+              className="font-bold text-3xl bg-red-100 px-4 py-2 border-2 border-black rounded-md shadow-lg ml-10"
+              onClick={() => handleDelete(article.id)}
+            >
+              Delete Article
+            </button>
+          </div>
         </div>
       </div>
     </div>
