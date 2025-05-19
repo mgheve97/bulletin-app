@@ -10,13 +10,7 @@ interface Article {
   datepost: string;
 }
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-const ViewArticle = ({ params }: PageProps) => {
+const ViewArticle = ({ params }: { params: { id: string } }) => {
   const { articleContent, deletearticle } = useArticle();
   const router = useRouter();
   const [article, setArticle] = useState<Article | null>(null);
