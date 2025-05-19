@@ -26,7 +26,7 @@ const BoardItem: React.FC<BoardItemProps> = ({
 
   const getFirst30Words = (text: string): string => {
     const words = text.trim().split(/\s+/);
-    return words.slice(0, 50).join(" ");
+    return words.slice(0, 30).join(" ");
   };
 
   const hasMoreContent = content.trim().split(/\s+/).length > 30;
@@ -69,7 +69,7 @@ const BoardItem: React.FC<BoardItemProps> = ({
   };
 
   return (
-    <div className="p-10 rounded-md border-t-8 border-b-2 mb-10 border-t-green-700 border-b-slate-800 shadow-sm bg-green-50">
+    <div className="h-auto w-auto p-10 rounded-md border-t-8 border-b-2 mb-10 border-t-green-700 border-b-slate-800 shadow-sm bg-green-50">
       <div className="flex justify-between items-center space-x-4">
         <div className="flex flex-col items-center">
           <p className="font-bold text-3xl mt-1">{title}</p>

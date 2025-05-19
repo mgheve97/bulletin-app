@@ -12,7 +12,7 @@ const BoardArticle = () => {
   };
 
   return (
-    <div className="sh-screen w-screen bg-green-100">
+    <div className="lg:h-screen h-screen w-screen bg-green-100">
       <div className=" flex flex-col sm:px-[174px] sm:pt-[133px] px-2 pt-5">
         <nav className="flex justify-between">
           <p className="font-bold sm:text-6xl text-[45px]">Board</p>
@@ -42,7 +42,7 @@ const BoardArticle = () => {
 
         {/* view content */}
         <div className="mt-16">
-          <div className="grid sm:grid-cols-3 grid-cols-1 gap-10">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-10">
             {articleContent.map((article, index) => (
               <BoardItem
                 key={index}

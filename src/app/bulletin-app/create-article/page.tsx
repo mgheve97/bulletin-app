@@ -59,7 +59,7 @@ const CreateArticle = () => {
   return (
     <div className="w-screen h-screen px-4 sm:px-16 bg-green-100">
       <div className="flex flex-col">
-        <nav className="flex justify-between sm:pt-[133px] pt-5 gap-2">
+        <nav className="flex justify-between sm:pt-[133px] pt-5">
           <p className="font-bold sm:text-5xl text-[24px] text-slate-700">
             CREATE A NEW ARTICLE
           </p>
@@ -71,7 +71,7 @@ const CreateArticle = () => {
               View Board
             </button>
             <button
-              className="font-bold sm:text-3xl text-[12px] text-slate-700 bg-green-200 sm:px-4 px-2 sm:py-2 py-1 border-2 border-green-700 rounded-md shadow-lg ml-4"
+              className="font-bold sm:text-3xl text-[12px] text-slate-700 bg-green-200 sm:px-4 px-2 sm:py-2 py-1 border-2 border-green-700 rounded-md shadow-lg sm:ml-4 ml-[28px]"
               onClick={GotoHome}
             >
               <div className="flex items-center gap-4">
@@ -96,11 +96,11 @@ const CreateArticle = () => {
         </nav>
 
         {/* title and content */}
-        <div className="flex sm:justify-center mt-20 sm:mt-28 space-x-[300px]">
+        <div className="flex flex-col lg:flex-row sm:justify-between mt-20 sm:mt-28">
           <div className="">
             <div className="flex flex-col">
               <input
-                className="border-b-2 border-green-700 sm:w-[800px] w-[325px] text-lg p-3 rounded-md font-bold"
+                className="border-b-2 border-green-700 w-full lg:w-[800px] max-w-[800px] text-lg p-3 rounded-md font-bold"
                 placeholder="Title"
                 type="text"
                 id="title"
@@ -112,7 +112,7 @@ const CreateArticle = () => {
               />
               <div className="mt-12">
                 <textarea
-                  className=" resize-y h-2/3 border-b-2 border-green-700 sm:w-[800px] w-[325px] text-lg p-3 rounded-md font-bold"
+                  className="resize-y border-b-2 border-green-700 w-full lg:w-[800px] max-w-[800px] text-lg p-3 rounded-md font-bold"
                   placeholder="Content"
                   id="content"
                   name="content"
@@ -148,7 +148,7 @@ const CreateArticle = () => {
             <Image
               src="/noteimage.png"
               alt="search"
-              className="hidden md:block"
+              className="hidden lg:block"
               width={421}
               height={421}
             />

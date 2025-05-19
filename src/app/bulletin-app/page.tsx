@@ -32,12 +32,12 @@ const Homepage = () => {
   return (
     <div className="w-screen h-screen px-4 md:px-16 bg-green-100">
       <div className="flex flex-col ">
-        <nav className="flex justify-between pt-[82px]">
-          <p className="font-bold sm:text-6xl text-[45px] text-slate-700 lg:border-b-2 lg:border-green-800">
+        <nav className="flex justify-between sm:pt-[80px] pt-6">
+          <p className="font-bold sm:text-6xl text-[35px] text-slate-700 lg:border-b-2 lg:border-green-800">
             Bulletin Board
           </p>
           <button
-            className="bg-green-200 sm:px-4 sm:py-2 px-2 py-1 border-2 border-green-700 rounded-md shadow text-slate-700 font-bold sm:text-3xl text-[25px]"
+            className="bg-green-200 sm:px-4 sm:py-2 px-2 py-1 border-2 border-green-700 rounded-md shadow text-slate-700 font-bold sm:text-3xl text-[15px]"
             onClick={HandleCreateArticle}
           >
             <div className="flex items-center gap-4 p-2">

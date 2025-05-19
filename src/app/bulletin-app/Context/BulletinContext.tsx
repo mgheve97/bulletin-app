@@ -29,23 +29,25 @@ export const ArticleProvider = ({ children }: { children: ReactNode }) => {
   const [articleContent, setArticleContent] = useState<Article[]>([]);
 
   useEffect(() => {
-    const storedArticles = localStorage.getItem("articles");
-    if (storedArticles) {
-      const parsedArticles = JSON.parse(storedArticles);
-      setArticleContent(parsedArticles);
+    try {
+      const storedArticles = localStorage.getItem("articles");
+      if (storedArticles) {
+        setArticleContent(JSON.parse(storedArticles));
+      }
+    } catch (error) {
+      console.error("Error parsing localStorage Article", error);
+      setArticleContent([]);
     }
   }, []);
 
   useEffect(() => {
-    if (articleContent.length > 0) {
-      localStorage.setItem("articles", JSON.stringify(articleContent));
-    }
+    localStorage.setItem("articles", JSON.stringify(articleContent));
   }, [articleContent]);
 
   const post = (content: Article) => {
     const newUpdatedArticle = {
       ...content,
-      id: articleContent.length.toString(),
+      id: Date.now().toString(), // Generate a unique ID based on the current timestamp
     };
     setArticleContent((prevArticles) => [...prevArticles, newUpdatedArticle]);
     setArticle(content);
