@@ -47,19 +47,19 @@ function ViewArticle({ params }: { params: Promise<{ id: string }> }) {
   }
 
   return (
-    <div className="h-screen w-screen bg-green-100">
-      <div className="flex flex-col lg:px-[174px] lg:pt-[133px] px-2 pt-5">
+    <div className="h-screen w-screen  bg-green-100">
+      <div className="flex flex-col sm:px-[174px] sm:pt-[133px] px-2 pt-5">
         <nav className="flex justify-between">
           <p className="font-bold text-6xl">Article</p>
-          <div className="flex lg:flex-row flex-col space-y-2 space-x-0 lg:space-y-0 lg:space-x-4">
+          <div className="flex sm:flex-row flex-col space-y-2 space-x-0 sm:space-y-0 sm:space-x-4">
             <button
-              className="font-bold lg:text-3xl text-[12px] bg-white lg:px-4 lg:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg "
+              className="font-bold sm:text-3xl text-[12px] bg-white sm:px-4 sm:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg "
               onClick={() => router.push("/bulletin-app/board-article/")}
             >
               View Board
             </button>
             <button
-              className="font-bold lg:text-3xl text-[12px] bg-white lg:px-4 lg:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg ml-4"
+              className="font-bold sm:text-3xl text-[12px] bg-white sm:px-4 sm:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg ml-4"
               onClick={() => router.push("/bulletin-app/")}
             >
               Back to Home
@@ -69,7 +69,7 @@ function ViewArticle({ params }: { params: Promise<{ id: string }> }) {
 
         {/* view content */}
         <div className="mt-16">
-          <div className="flex flex-col justify-center items-center p-10 rounded-md border-t-8 border-b-2 border-x-1 border-t-green-700 border-b-slate-800 border-x-slate-500 mb-10 bg-green-50 mx-20 lg:mx-0">
+          <div className="flex flex-col justify-center items-center p-10 rounded-md border-t-8 border-b-2 border-x-1 border-t-green-700 border-b-slate-800 border-x-slate-500 mb-10 bg-green-50 mx-20 sm:mx-0">
             <p className="font-bold text-3xl mt-1">{article.title}</p>
             <p className="font-bold text-gray-500 text-md mt-2">
               {article.datepost}
@@ -87,7 +87,7 @@ function ViewArticle({ params }: { params: Promise<{ id: string }> }) {
               Update Article
             </button>
             <button
-              className="font-bold text-3xl bg-red-100 px-4 py-2 border-2 border-black rounded-md shadow-lg ml-10"
+              className="font-bold sm:text-3xl text-[12px] bg-red-100 sm:px-4 sm:py-2 px-2 py-1 border-2 border-black rounded-md shadow-lg ml-10"
               onClick={() => handleDelete(article.id)}
             >
               Delete Article

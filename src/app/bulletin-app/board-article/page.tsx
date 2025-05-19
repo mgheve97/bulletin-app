@@ -12,10 +12,10 @@ const BoardArticle = () => {
   };
 
   return (
-    <div className="h-full w-full bg-green-100">
-      <div className=" flex flex-col lg:px-[174px] lg:pt-[133px] px-2 pt-5">
+    <div className="sh-screen w-screen bg-green-100">
+      <div className=" flex flex-col sm:px-[174px] sm:pt-[133px] px-2 pt-5">
         <nav className="flex justify-between">
-          <p className="font-bold lg:text-6xl text-[45px]">Board</p>
+          <p className="font-bold sm:text-6xl text-[45px]">Board</p>
           <div>
             <button
               className="font-bold text-3xl text-slate-700 bg-green-200 px-4 py-2 border-2 border-green-700 rounded-md shadow-lg ml-4"
@@ -42,7 +42,7 @@ const BoardArticle = () => {
 
         {/* view content */}
         <div className="mt-16">
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-10">
+          <div className="grid sm:grid-cols-3 grid-cols-1 gap-10">
             {articleContent.map((article, index) => (
               <BoardItem
                 key={index}

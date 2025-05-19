@@ -33,11 +33,11 @@ const Homepage = () => {
     <div className="w-screen h-screen px-4 md:px-16 bg-green-100">
       <div className="flex flex-col ">
         <nav className="flex justify-between pt-[82px]">
-          <p className="font-bold text-6xl text-slate-700 border-b-2 border-green-800">
+          <p className="font-bold sm:text-6xl text-[45px] text-slate-700 lg:border-b-2 lg:border-green-800">
             Bulletin Board
           </p>
           <button
-            className="bg-green-200 px-4 py-2 border-2 border-green-700 rounded-md shadow text-slate-700 font-bold text-3xl"
+            className="bg-green-200 sm:px-4 sm:py-2 px-2 py-1 border-2 border-green-700 rounded-md shadow text-slate-700 font-bold sm:text-3xl text-[25px]"
             onClick={HandleCreateArticle}
           >
             <div className="flex items-center gap-4 p-2">
@@ -65,9 +65,11 @@ const Homepage = () => {
           <div className="mt-32 bg-green-200 shadow-lg p-10">
             {/* view board */}
             <div className=" flex justify-between items-center ">
-              <p className="font-bold text-[36px] text-slate-700">Articles:</p>
+              <p className="font-bold sm:text-[36px] text-[25px] text-slate-700">
+                Articles:
+              </p>
               <button
-                className="font-bold text-slate-700 bg-white text-[23px] px-6 py-2 border-2 border-green-700 hover:bg-green-700 hover:text-white rounded-md shadow"
+                className="font-bold text-slate-700 bg-white sm:text-[23px] sm:px-6 sm:py-2 text-[21px] px-3 py-2 border-2 border-green-700 hover:bg-green-700 hover:text-white rounded-md shadow"
                 onClick={GotoBoard}
               >
                 View Board

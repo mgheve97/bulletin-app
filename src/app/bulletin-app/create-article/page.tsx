@@ -57,21 +57,21 @@ const CreateArticle = () => {
   };
 
   return (
-    <div className="w-screen h-screen px-4 lg:px-16 bg-green-100">
+    <div className="w-screen h-screen px-4 sm:px-16 bg-green-100">
       <div className="flex flex-col">
-        <nav className="flex justify-between lg:pt-[133px] pt-5 gap-2">
-          <p className="font-bold lg:text-5xl text-[24px] text-slate-700">
+        <nav className="flex justify-between sm:pt-[133px] pt-5 gap-2">
+          <p className="font-bold sm:text-5xl text-[24px] text-slate-700">
             CREATE A NEW ARTICLE
           </p>
-          <div className="flex lg:flex-row flex-col space-y-2 space-x-0 lg:space-y-0 lg:space-x-4">
+          <div className="flex sm:flex-row flex-col space-y-2 space-x-0 sm:space-y-0 sm:space-x-4">
             <button
-              className="font-bold text-slate-700 bg-white lg:text-3xl text-[12px] lg:px-4 px-2 lg:py-2 py-1 border-2 border-green-700 rounded-md shadow-lg "
+              className="font-bold text-slate-700 bg-white sm:text-3xl text-[12px] sm:px-4 px-2 sm:py-2 py-1 border-2 border-green-700 rounded-md shadow-lg "
               onClick={GotoBoard}
             >
               View Board
             </button>
             <button
-              className="font-bold lg:text-3xl text-[12px] text-slate-700 bg-green-200 lg:px-4 px-2 lg:py-2 py-1 border-2 border-green-700 rounded-md shadow-lg ml-4"
+              className="font-bold sm:text-3xl text-[12px] text-slate-700 bg-green-200 sm:px-4 px-2 sm:py-2 py-1 border-2 border-green-700 rounded-md shadow-lg ml-4"
               onClick={GotoHome}
             >
               <div className="flex items-center gap-4">
@@ -82,7 +82,7 @@ const CreateArticle = () => {
                   viewBox="0 0 32 30"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-auto lg:max-w-[32px] max-w-[16px]" // Responsive classes
+                  className="w-full h-auto sm:max-w-[32px] max-w-[16px]" // Responsive classes
                   preserveAspectRatio="xMidYMid meet" // Ensures proper scaling
                 >
                   <path
@@ -96,11 +96,11 @@ const CreateArticle = () => {
         </nav>
 
         {/* title and content */}
-        <div className="flex lg:justify-center mt-20 lg:mt-28 space-x-[300px]">
+        <div className="flex sm:justify-center mt-20 sm:mt-28 space-x-[300px]">
           <div className="">
             <div className="flex flex-col">
               <input
-                className="border-b-2 border-green-700 lg:w-[800px] w-[325px] text-lg p-3 rounded-md font-bold"
+                className="border-b-2 border-green-700 sm:w-[800px] w-[325px] text-lg p-3 rounded-md font-bold"
                 placeholder="Title"
                 type="text"
                 id="title"
@@ -112,7 +112,7 @@ const CreateArticle = () => {
               />
               <div className="mt-12">
                 <textarea
-                  className=" resize-y h-2/3 border-b-2 border-green-700 lg:w-[800px] w-[325px] text-lg p-3 rounded-md font-bold"
+                  className=" resize-y h-2/3 border-b-2 border-green-700 sm:w-[800px] w-[325px] text-lg p-3 rounded-md font-bold"
                   placeholder="Content"
                   id="content"
                   name="content"
