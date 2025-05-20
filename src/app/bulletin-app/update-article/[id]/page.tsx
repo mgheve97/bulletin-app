@@ -16,6 +16,7 @@ function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
   const [article, setArticle] = useState<Article | null>(null);
   const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -26,6 +27,7 @@ function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
       if (foundArticle) {
         setArticle(foundArticle);
         setTitle(foundArticle.title);
+        setContent(foundArticle.content);
       }
     };
 
@@ -37,15 +39,28 @@ function UpdateArticle({ params }: { params: Promise<{ id: string }> }) {
   };
 
   const handleUpdate = () => {
-    if (title.length === 0 || !title.trim()) {
+    if (
+      title.length === 0 ||
+      (!title.trim() && content.length === 0) ||
+      !content.trim()
+    ) {
       deletearticle(article?.id || "");
-    }
-    if (article) {
-      updatearticle(article.id, {
-        title: article.title,
-        content: article.content,
-      });
-      router.push("/bulletin-app/");
+    } else if (
+      title.length === 0 ||
+      !title.trim() ||
+      content.length === 0 ||
+      !content.trim()
+    ) {
+      alert("Please fill in all fields");
+      return;
+    } else {
+      if (article) {
+        updatearticle(article.id, {
+          title: article.title,
+          content: article.content,
+        });
+        router.push("/bulletin-app/");
+      }
     }
   };
 
